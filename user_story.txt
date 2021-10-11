@@ -1,0 +1,13 @@
+
+
+User stories 
+
+- As a user, so I can I can quickly go to a website, I'd like to be able to see a list of bookmarks
+- As a user, so I can save my favourite websites, I'd like to be able to add new bookmarks 
+- As a user, so I can remove websites I no longer use, I'd like to be able to delete bookmarks
+- As a user, so I can make sure the websites saved are up to date, I'd like to be able to update bookmarks
+- As a user, so I can quickly see why I saved a website, I'd like to be able to comment on bookmarks
+- As a user, so I can see related websites, I'd like to be able to tag bookmarks in categories
+- As a user, so I can see related websites, I'd like to be able to filter bookmarks by tag 
+- As a user, so someone else can't change by bookmarks, I'd like users to be restricted to only manage their own bookmarks
+
