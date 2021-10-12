@@ -3,6 +3,8 @@
     "coverage": {
       "/Users/emmanuel/Projects/week4/bookmark/app.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null,
@@ -24,6 +26,8 @@
       },
       "/Users/emmanuel/Projects/week4/bookmark/lib/bookmark.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -33,20 +37,31 @@
           null,
           1,
           5,
+          0,
+          null,
+          5,
+          null,
           5,
           35,
-          5,
           null,
           null
         ]
       },
       "/Users/emmanuel/Projects/week4/bookmark/spec/bookmark_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
           1,
           1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
           1,
           1,
           1,
@@ -57,6 +72,8 @@
       },
       "/Users/emmanuel/Projects/week4/bookmark/spec/features/infrastructure_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -67,6 +84,8 @@
       },
       "/Users/emmanuel/Projects/week4/bookmark/spec/features/view_bookmarks_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -80,6 +99,6 @@
         ]
       }
     },
-    "timestamp": 1634047565
+    "timestamp": 1634052316
   }
 }

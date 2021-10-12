@@ -8,9 +8,12 @@ class Bookmark
   end
 
   def all
-    connection = PG.connect(dbname: 'bookmark_manager')
-    result = connection.exec('select * from bookmarks')
-    result.each { |bookmark| @bookmark_list << bookmark['url'] }
-    @bookmark_list
+    if ENV['ENVIRONENT'] == 'test'
+      connection = PG.connect(dbname: 'bookmark_manager_test')
+    else
+      connection = PG.connect(dbname: 'bookmark_manager')
+    end 
+      result = connection.exec('select * from bookmarks')
+      result.map { |bookmark| bookmark['url'] }
   end
 end
