@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 ruby '3.0'
+gem 'pg'
+gem 'selenium-webdriver'
 gem 'sinatra'
 gem 'sinatra-contrib'
-gem 'selenium-webdriver'
 gem 'webrick'
 group :test do
   gem 'capybara'

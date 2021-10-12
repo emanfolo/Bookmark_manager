@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 require 'sinatra/base'
-require './lib/bookmark.rb'
+require './lib/bookmark'
 
 class BookmarkManager < Sinatra::Base
   enable :sessions
@@ -13,5 +15,5 @@ class BookmarkManager < Sinatra::Base
     erb(:bookmarks)
   end
 
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end
