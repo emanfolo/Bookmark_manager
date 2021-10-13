@@ -9,17 +9,18 @@ class BookmarkManager < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  get '/' do
-    erb(:index)
-  end
-
   get '/bookmarks' do
-    @bookmark = Bookmark
-    erb(:bookmarks)
+    
+    @bookmarks = Bookmark.all
+    erb:'/bookmarks/index'
   end
 
-  post '/add_bookmark' do
-    @bookmark.add(params[:bookmark_url])
+  get '/bookmarks/add' do 
+    erb:'/bookmarks/add'
+  end 
+
+  post '/bookmarks' do
+    Bookmark.add(params['url'])
     redirect to ('/bookmarks')
   end
 
