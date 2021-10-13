@@ -11,11 +11,14 @@
   </style>
 
 </head>
-<h1>Hello World!</h1>
-<h2>My Bookmarks</h2>
+<h1>My Bookmarks</h1>
 <ul>
   <% @bookmarks.each do |bookmark| %>
-    <li><%= bookmark %></li>
+    <li> 
+      <a href="<%= bookmark.url%>">
+        <%= bookmark.title %>
+      </a>
+    </li>
   <% end %>
 </ul>
 <a href="/bookmarks/add"> Add a bookmark </a>

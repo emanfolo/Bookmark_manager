@@ -10,7 +10,6 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/bookmarks' do
-    
     @bookmarks = Bookmark.all
     erb:'/bookmarks/index'
   end
@@ -20,9 +19,12 @@ class BookmarkManager < Sinatra::Base
   end 
 
   post '/bookmarks' do
-    Bookmark.add(params['url'])
+    Bookmark.add(params['url'], params['title'])
     redirect to ('/bookmarks')
   end
 
   run! if app_file == $PROGRAM_NAME
 end
+
+#continue from Returning a bookmark from Bookmark.create 
+#in step 11 of Walkthrough

@@ -6,23 +6,23 @@ describe Bookmark do
     it 'returns a list of bookmarks' do
       connection = PG.connect(dbname: 'bookmark_manager_test')
 
-      connection.exec("INSERT INTO bookmarks VALUES(1, 'http://www.makersacademy.com');")
-      connection.exec("INSERT INTO bookmarks VALUES(2, 'http://www.destroyallsoftware.com');")
-      connection.exec("INSERT INTO bookmarks VALUES(3, 'http://www.google.com');")
+      Bookmark.add('http://www.makersacademy.com', 'makers academy')
+      Bookmark.add('http://www.destroyallsoftware.com', 'destroy all software')
+      Bookmark.add('http://www.google.com', 'google')
 
       bookmarks = Bookmark.all
 
-      expect(bookmarks[0]).to include 'makersacademy.com'
-      expect(bookmarks[1]).to include 'destroyallsoftware.com'
-      expect(bookmarks[2]).to include 'http://www.google.com'
+      expect(bookmarks[0].title).to include 'makers academy'
+      expect(bookmarks[1].title).to include 'destroy all software'
+      expect(bookmarks[2].title).to include 'google'
     end
   end
 
   describe '.add' do 
     it 'adds a new bookmark to the existing list of bookmarks' do 
-      Bookmark.add("http://www.dailymail.com")
+      Bookmark.add("http://www.dailymail.com", "daily mail")
   
-      expect(Bookmark.all).to include 'http://www.dailymail.com'
+      expect(Bookmark.all[0].title).to include 'daily mail'
     end 
 end
 end 
