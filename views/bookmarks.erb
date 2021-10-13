@@ -1,2 +1,23 @@
-<h1>My Bookmarks</h1>
-<%= @bookmarks.all %>
+<head>
+  <style>
+    body {
+    background-color: linen;
+  }
+
+  form {
+    text-align: center;
+  }
+
+  </style>
+
+</head>
+  <body>
+  <h1>My Bookmarks</h1>
+  <div><%= @bookmark.all %></div>
+  <div>Add a bookmark</div>
+  <form method="post" action="/add_bookmark">
+    <input type="text" name="bookmark_url" placeholder="Enter URL">
+    <input type="submit" value="Submit"> 
+  </form>
+  </body>
+

@@ -1,7 +1,7 @@
-ENV['ENVIRONMENT'] = 'test'
-
 require 'simplecov'
 require 'simplecov-console'
+require_relative './setup_test_database'
+
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
                                                                  SimpleCov::Formatter::Console,
                                                                  # Want a nice code coverage website? Uncomment this next line!
@@ -9,17 +9,23 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
                                                                ])
 SimpleCov.start
 
-ENV['RACK_ENV'] = 'test'
-
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 
+ENV['ENVIRONMENT'] = 'test'
+
 Capybara.app = BookmarkManager
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
+
+RSpec.configure do |config|
+  config.before(:each) do 
+    setup_test_database
+  end
+end
 
 RSpec.configure do |config|
   config.after(:suite) do
