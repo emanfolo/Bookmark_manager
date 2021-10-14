@@ -9,6 +9,8 @@ class BookmarkManager < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  enable :sessions, :method_override
+
   get '/bookmarks' do
     @bookmarks = Bookmark.all
     erb:'/bookmarks/index'
@@ -22,6 +24,11 @@ class BookmarkManager < Sinatra::Base
     Bookmark.add(url: params['url'], title: params['title'])
     redirect to ('/bookmarks')
   end
+
+  delete '/bookmarks/:id' do 
+     Bookmark.delete(id:params['id'])
+     redirect '/bookmarks'
+  end 
 
   run! if app_file == $PROGRAM_NAME
 end

@@ -29,5 +29,16 @@ describe Bookmark do
       expect(bookmark.url).to eq 'http://www.dailymail.com'
       expect(bookmark.id).to eq persisted_data['id']
     end 
-end
+  end
+
+  describe '.delete' do 
+    it 'deletes a given bookmark' do 
+      bookmark = Bookmark.add(title: "Google", url: "Google.com")
+
+      Bookmark.delete(id: bookmark.id)
+
+      expect(Bookmark.all.length).to eq 0
+    end 
+  end 
+
 end 
