@@ -7,6 +7,6 @@ feature 'Viewing My Bookmarks' do
     Bookmark.add("http://www.destroyallsoftware.com", 'destroy all software')
     Bookmark.add("http://www.google.com", 'google')
     visit('/bookmarks')
-    expect(page).to have_content('makers academy')
+    expect(page).to have_link('makers academy', href: 'http://www.makersacademy.com')
   end
 end

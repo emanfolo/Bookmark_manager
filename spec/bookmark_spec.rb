@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 require './lib/bookmark'
+require 'database_helper'
 
 describe Bookmark do
   describe '.all' do
@@ -20,9 +21,13 @@ describe Bookmark do
 
   describe '.add' do 
     it 'adds a new bookmark to the existing list of bookmarks' do 
-      Bookmark.add("http://www.dailymail.com", "daily mail")
+      bookmark = Bookmark.add("http://www.dailymail.com", "daily mail")
+      persisted_data = persisted_data(bookmark.id)
   
-      expect(Bookmark.all[0].title).to include 'daily mail'
+      expect(bookmark.title).to eq 'daily mail'
+      expect(bookmark).to be_a Bookmark
+      expect(bookmark.url).to eq 'http://www.dailymail.com'
+      expect(bookmark.id).to eq persisted_data['id']
     end 
 end
 end 

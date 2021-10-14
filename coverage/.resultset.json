@@ -29,6 +29,9 @@
           null,
           null,
           1,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -42,21 +45,21 @@
           1,
           null,
           1,
-          8,
-          8,
-          8,
+          15,
+          15,
+          15,
           null,
           null,
           1,
-          4,
-          4,
+          3,
+          3,
           null,
           0,
           null,
           null,
-          4,
-          4,
-          8,
+          3,
+          3,
+          7,
           null,
           null,
           null,
@@ -66,6 +69,7 @@
           null,
           0,
           null,
+          8,
           8,
           null,
           null
@@ -92,6 +96,24 @@
         "lines": [
           null,
           1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
           null,
           1,
           1,
@@ -101,22 +123,18 @@
           1,
           1,
           1,
-          null,
-          1,
-          null,
-          1,
-          1,
           1,
           null,
           null,
-          null,
+          null
+        ]
+      },
+      "/Users/emmanuel/Projects/week4/bookmark/spec/database_helper.rb": {
+        "lines": [
           1,
           1,
           1,
-          null,
           1,
-          null,
-          null,
           null
         ]
       },
@@ -151,6 +169,6 @@
         ]
       }
     },
-    "timestamp": 1634144239
+    "timestamp": 1634208877
   }
 }
