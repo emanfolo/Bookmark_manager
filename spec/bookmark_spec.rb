@@ -7,9 +7,9 @@ describe Bookmark do
     it 'returns a list of bookmarks' do
       connection = PG.connect(dbname: 'bookmark_manager_test')
 
-      Bookmark.add('http://www.makersacademy.com', 'makers academy')
-      Bookmark.add('http://www.destroyallsoftware.com', 'destroy all software')
-      Bookmark.add('http://www.google.com', 'google')
+      Bookmark.add(url:'http://www.makersacademy.com', title:'makers academy')
+      Bookmark.add(url:'http://www.destroyallsoftware.com', title:'destroy all software')
+      Bookmark.add(url:'http://www.google.com',title: 'google')
 
       bookmarks = Bookmark.all
 
@@ -21,7 +21,7 @@ describe Bookmark do
 
   describe '.add' do 
     it 'adds a new bookmark to the existing list of bookmarks' do 
-      bookmark = Bookmark.add("http://www.dailymail.com", "daily mail")
+      bookmark = Bookmark.add(url:"http://www.dailymail.com",title: "daily mail")
       persisted_data = persisted_data(bookmark.id)
   
       expect(bookmark.title).to eq 'daily mail'

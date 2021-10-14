@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/max/Projects/EmanMark/Bookmark_manager/app.rb": {
+      "/Users/emmanuel/Projects/week4/bookmark/app.rb": {
         "lines": [
           null,
           null,
@@ -15,8 +15,8 @@
           null,
           null,
           1,
-          0,
-          0,
+          2,
+          2,
           null,
           null,
           1,
@@ -25,7 +25,7 @@
           null,
           1,
           1,
-          0,
+          1,
           null,
           null,
           1,
@@ -35,7 +35,7 @@
           null
         ]
       },
-      "/Users/max/Projects/EmanMark/Bookmark_manager/lib/bookmark.rb": {
+      "/Users/emmanuel/Projects/week4/bookmark/lib/bookmark.rb": {
         "lines": [
           null,
           null,
@@ -45,39 +45,37 @@
           1,
           null,
           1,
-          0,
-          0,
-          0,
+          15,
+          15,
+          15,
           null,
           null,
           1,
-          0,
-          0,
+          3,
+          3,
           null,
           0,
           null,
           null,
-          0,
-          0,
-          0,
+          3,
+          3,
+          7,
           null,
           null,
           null,
           1,
-          4,
-          4,
+          8,
+          8,
           null,
           0,
           null,
-          4,
-          null,
-          null,
-          0,
+          8,
+          8,
           null,
           null
         ]
       },
-      "/Users/max/Projects/EmanMark/Bookmark_manager/spec/setup_test_database.rb": {
+      "/Users/emmanuel/Projects/week4/bookmark/spec/setup_test_database.rb": {
         "lines": [
           1,
           null,
@@ -94,7 +92,7 @@
           null
         ]
       },
-      "/Users/max/Projects/EmanMark/Bookmark_manager/spec/bookmark_spec.rb": {
+      "/Users/emmanuel/Projects/week4/bookmark/spec/bookmark_spec.rb": {
         "lines": [
           null,
           1,
@@ -106,45 +104,22 @@
           1,
           null,
           1,
-          0,
-          0,
+          1,
+          1,
           null,
-          0,
+          1,
           null,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
           null,
           null,
           null,
           1,
           1,
           1,
-          0,
+          1,
           null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/max/Projects/EmanMark/Bookmark_manager/spec/database_helper.rb": {
-        "lines": [
-          1,
-          0,
-          0,
-          0,
-          null
-        ]
-      },
-      "/Users/max/Projects/EmanMark/Bookmark_manager/spec/features/adding_bookmarks_spec.rb": {
-        "lines": [
-          1,
-          1,
-          1,
           1,
           1,
           1,
@@ -154,7 +129,30 @@
           null
         ]
       },
-      "/Users/max/Projects/EmanMark/Bookmark_manager/spec/features/view_bookmarks_spec.rb": {
+      "/Users/emmanuel/Projects/week4/bookmark/spec/database_helper.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/emmanuel/Projects/week4/bookmark/spec/features/adding_bookmarks_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/emmanuel/Projects/week4/bookmark/spec/features/view_bookmarks_spec.rb": {
         "lines": [
           null,
           1,
@@ -162,15 +160,15 @@
           1,
           1,
           1,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
       }
     },
-    "timestamp": 1634220996
+    "timestamp": 1634222957
   }
 }
