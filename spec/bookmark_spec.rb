@@ -23,12 +23,12 @@ describe Bookmark do
   describe '.add' do 
     it 'adds a new bookmark to the existing list of bookmarks' do 
       bookmark = Bookmark.add(url:"http://www.dailymail.com",title: "daily mail")
-      persisted_data = persisted_data(bookmark.id)
+      persisted_data = persisted_data(id: bookmark.id, table: 'bookmarks')
   
       expect(bookmark.title).to eq 'daily mail'
       expect(bookmark).to be_a Bookmark
       expect(bookmark.url).to eq 'http://www.dailymail.com'
-      expect(bookmark.id).to eq persisted_data['id']
+      expect(bookmark.id).to eq persisted_data.first['id']
     end 
 
     it 'does not create a new bookmark if the URL is invalid' do 
@@ -71,5 +71,16 @@ describe Bookmark do
       expect(found.url).to eq 'http://www.makersacademy.com'
     end
   end
+
+  let(:comment_class) { double(:comment_class) }
+
+  describe '.comments' do 
+    it 'returns a list of comments on a bookmark' do
+      bookmark = Bookmark.add(title: 'Makers Academy', url: 'http://www.makersacademy.com')
+      expect(comment_class).to receive(:where).with(bookmark_id: bookmark.id)
+
+      bookmark.comments(comment_class)
+    end 
+  end 
 
 end 

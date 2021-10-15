@@ -15,7 +15,7 @@
 <a href="/bookmarks/add"> Add a bookmark </a>
 <ul>
   <% @bookmarks.each do |bookmark| %>
-    <li> 
+    <li id="bookmark <%= bookmark.id %>" > 
       <a href="<%= bookmark.url%>">
         <%= bookmark.title %>
       </a>
@@ -26,6 +26,14 @@
       <form action="/bookmarks/<%= bookmark.id %>/edit" method="get">
         <input type="submit" value="Edit" />
       </form>
+      <form action="/bookmarks/<%= bookmark.id %>/comments/new" method="get">
+        <input type="submit" value="Add Comment" />
+      </form>
+      <ul>
+        <% bookmark.comments.each do |comment| %>
+          <li><%= comment.text %></li>
+        <% end %>
+      </ul>
     </li>
   <% end %>
 </ul>
