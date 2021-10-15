@@ -58,12 +58,14 @@ class Bookmark
   end
 
   def self.find(id:)
-    if ENV['ENVIROMENT'] == 'test'
+    if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'bookmark_manager_test')
     else
       connection = PG.connect(dbname: 'bookmark_manager')
     end
-    result = connection.exec_params("SELECT * FROM bookmarks WHERE id = $1;", [id])
+    result = connection.exec_params(
+      "SELECT * FROM bookmarks WHERE id = $1", [id]
+      )
     Bookmark.new(id: result[0]['id'], title: result[0]['title'], url: result[0]['url'])
   end
 end

@@ -31,8 +31,8 @@ class BookmarkManager < Sinatra::Base
   end 
 
   get '/bookmarks/:id/edit' do
-    @bookmark_id = params[:id]
-    erb :'bookmarks/edit'
+    @bookmark = Bookmark.find(id: params[:id])
+    erb:'/bookmarks/edit'
   end
 
   patch '/bookmarks/:id' do
@@ -40,7 +40,7 @@ class BookmarkManager < Sinatra::Base
     redirect('/bookmarks')
   end
 
-  run! if app_file == $PROGRAM_NAME
+  run! if app_file == $0
 end
 
 #continue from Returning a bookmark from Bookmark.create 
