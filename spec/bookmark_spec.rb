@@ -2,10 +2,11 @@
 require './lib/bookmark'
 require 'database_helper'
 
+
 describe Bookmark do
   describe '.all' do
     it 'returns a list of bookmarks' do
-      connection = PG.connect(dbname: 'bookmark_manager_test')
+      #connection = PG.connect(dbname: 'bookmark_manager_test')
 
       Bookmark.add(url:'http://www.makersacademy.com', title:'makers academy')
       Bookmark.add(url:'http://www.destroyallsoftware.com', title:'destroy all software')
