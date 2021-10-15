@@ -34,6 +34,8 @@ class Bookmark
   end
 
   def self.delete(id:)
+    DatabaseConnection.query("DELETE FROM comments WHERE bookmark_id = $1", [id])
+    DatabaseConnection.query("DELETE FROM bookmarks_tags WHERE bookmark_id = $1", [id])
     DatabaseConnection.query("DELETE FROM bookmarks WHERE id = $1", [id])
   end
 
@@ -71,6 +73,6 @@ class Bookmark
   private 
 
   def self.is_url?(url)
-    url =~ /\A#{URI::regexp(['http', 'https'])}\z/
+    url =~ URI::DEFAULT_PARSER.regexp[:ABS_URI]
   end
 end

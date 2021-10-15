@@ -1,3 +1,5 @@
+require_relative './database_connection'
+
 class Comment
   def self.add(bookmark_id:, text:)
     result = DatabaseConnection.query(
