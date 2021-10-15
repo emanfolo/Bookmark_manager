@@ -30,11 +30,16 @@ describe Bookmark do
       expect(bookmark.url).to eq 'http://www.dailymail.com'
       expect(bookmark.id).to eq persisted_data['id']
     end 
+
+    it 'does not create a new bookmark if the URL is invalid' do 
+      Bookmark.add(url: 'invalid bookmark', title: 'gmail')
+      expect(Bookmark.all).to be_empty 
+    end
   end
 
   describe '.delete' do 
     it 'deletes a given bookmark' do 
-      bookmark = Bookmark.add(title: "Google", url: "Google.com")
+      bookmark = Bookmark.add(title: "Google", url: "http://www.Google.com")
 
       Bookmark.delete(id: bookmark.id)
 
@@ -44,7 +49,7 @@ describe Bookmark do
 
   describe '.update' do 
     it 'updates the bookmark with the given data' do
-      bookmark = Bookmark.add(title: 'Makers Academy', url: 'www.MakersAcademy.com')
+      bookmark = Bookmark.add(title: 'Makers Academy', url: 'http://www.MakersAcademy.com')
       updated_bookmark = Bookmark.update(id: bookmark.id, url: 'http://www.snakersacademy.com', title: 'Snakers Academy')
 
       expect(updated_bookmark).to be_a Bookmark

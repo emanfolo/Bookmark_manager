@@ -12,6 +12,7 @@
 
 </head>
 <h1>My Bookmarks</h1>
+<a href="/bookmarks/add"> Add a bookmark </a>
 <ul>
   <% @bookmarks.each do |bookmark| %>
     <li> 
@@ -28,4 +29,6 @@
     </li>
   <% end %>
 </ul>
-<a href="/bookmarks/add"> Add a bookmark </a>
+<p>
+  <%= flash[:notice] %>
+</p>

@@ -5,6 +5,15 @@ feature 'Adding bookmark' do
     fill_in 'title', with: 'gmail'
     click_button 'Submit'
     expect(page).to have_link('gmail', href: 'http://www.gmail.com')
-    #recheck these tests as they are not failing no matter what
   end
+
+  scenario 'The bookmark must be a valid URL' do 
+    visit('/bookmarks/add')
+    fill_in 'url' , with: 'fake bookmark'
+    fill_in 'title', with: 'gmail'
+    click_button('Submit')
+
+    expect(page).not_to have_content 'fake bookmark'
+    expect(page).to have_content 'You must submit a valid URL.'
+  end 
 end
